@@ -24,7 +24,7 @@ jobs:
       - name: Prepare public website only
         run: |
           mkdir _site
-          cp index.html styles.css script.js projects.js .nojekyll _site/
+          cp *.html *.css *.js .nojekyll _site/
           cp -R assets _site/assets
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
