@@ -16,9 +16,9 @@ window.PROJECT_MEDIA = {
     "fit": "cover"
   },
   "pup-gradient": {
-    "src": "",
+    "src": "./assets/images/selected-graphics-thumbnail.png",
     "type": "image",
-    "alt": "PUP Mathematics Gradient graphics",
+    "alt": "Rising Along the Gradient — PUP Mathematics Gradient 2026 event overview poster",
     "fit": "cover"
   },
   "scam-dynamics": {

@@ -19,3 +19,8 @@ h1,h2,h3,h4,h5,h6,b,strong,.brand,.topaside,.eyebrow,.tab,.cardtop,.placeholder,
 .cardtop small{font-family:'Inter',Arial,sans-serif;font-weight:400}
 
 .project-card-link{display:block;text-decoration:none}.project-card-link .visual{transition:filter .2s}.project-card-link:hover .visual{filter:brightness(.95)}.project-open{display:block;margin-top:15px;font-family:var(--font-display);font-weight:700;font-size:13px}.project-card-link:hover .project-open{text-decoration:underline}
+
+/* Keep the uploaded Selected Graphics poster intact, with its natural ratio. */
+.visual.has-media[data-project="pup-gradient"]{aspect-ratio:auto;background:transparent}
+.visual.has-media[data-project="pup-gradient"] img{width:100%;height:auto;object-fit:contain}
+.project-card-link:hover .visual[data-project="pup-gradient"]{filter:none}
