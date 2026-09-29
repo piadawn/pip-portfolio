@@ -13,7 +13,7 @@
 [id]{scroll-margin-top:24px}
 
 /* Typography: regular text uses Inter; bold text uses Helvetica Now Display. */
-@font-face{font-family:'Helvetica Now Display';src:local('Helvetica Now Display Bold'),local('HelveticaNowDisplay-Bold');font-style:normal;font-weight:600 900;font-display:swap}
+@font-face{font-family:'Helvetica Now Display';src:url('./assets/fonts/HelveticaNowDisplay-Bold.woff2') format('woff2');font-style:normal;font-weight:600 900;font-display:swap}
 :root{--font-display:'Helvetica Now Display','Helvetica Neue',Helvetica,Arial,sans-serif}
 h1,h2,h3,h4,h5,h6,b,strong,.brand,.topaside,.eyebrow,.tab,.cardtop,.placeholder,.corner,.index,.card p,.contactlink,.nav a{font-family:var(--font-display)}
 .cardtop small{font-family:'Inter',Arial,sans-serif;font-weight:400}
