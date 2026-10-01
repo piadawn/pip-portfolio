@@ -10,3 +10,14 @@
 .showcase-experience .experience div span{font-size:12px;line-height:1.55;color:#bcbcb7;margin-top:8px}
 @media(max-width:850px){.showcase-stage{grid-template-columns:1fr;gap:42px;padding:45px 28px}.showcase-card{justify-self:center}.showcase-experience{max-width:560px;justify-self:center}}
 @media(max-width:580px){.showcase-stage{padding:36px 20px}.showcase-experience .experience{grid-template-columns:1fr;gap:7px}}
+
+/* Keep the experience column inside the mobile showcase. */
+@media(max-width:580px){
+.showcase-stage{grid-template-columns:minmax(0,1fr);gap:36px;padding:36px 20px}
+.showcase-experience{width:100%;max-width:100%;min-width:0;justify-self:stretch}
+.showcase-experience>h2{font-size:32px;line-height:1.08;overflow-wrap:break-word}
+.showcase-experience .experience{width:100%;min-width:0;grid-template-columns:minmax(0,1fr);gap:9px;padding:20px 0}
+.showcase-experience .experience>div{min-width:0;overflow-wrap:break-word}
+.showcase-experience .experience div span{line-height:1.65}
+.experience-kicker{line-height:1.5}
+}
