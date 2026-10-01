@@ -26,3 +26,8 @@ for (const slot of document.querySelectorAll("[data-project]")) {
   slot.append(media);
   media.src = config.src;
 }
+
+// Open the requested portfolio practice when arriving from a project page.
+function selectLinkedPractice(){const tab=tabs.find(t=>'#'+t.getAttribute('aria-controls')===location.hash);if(tab){selectTab(tab);document.querySelector(location.hash)?.scrollIntoView({block:'start'});}}
+selectLinkedPractice();
+window.addEventListener('hashchange',selectLinkedPractice);
