@@ -10,7 +10,6 @@
 .showcase-experience .experience div span{font-size:12px;line-height:1.55;color:#bcbcb7;margin-top:8px}
 @media(max-width:850px){.showcase-stage{grid-template-columns:1fr;gap:42px;padding:45px 28px}.showcase-card{justify-self:center}.showcase-experience{max-width:560px;justify-self:center}}
 @media(max-width:580px){.showcase-stage{padding:36px 20px}.showcase-experience .experience{grid-template-columns:1fr;gap:7px}}
-
 /* Keep the experience column inside the mobile showcase. */
 @media(max-width:580px){
 .showcase-stage{grid-template-columns:minmax(0,1fr);gap:36px;padding:36px 20px}
@@ -21,3 +20,19 @@
 .showcase-experience .experience div span{line-height:1.65}
 .experience-kicker{line-height:1.5}
 }
+/* Showcase reference: soft expansion and frosted portrait action. */
+.showcase-card{position:relative;box-sizing:border-box;box-shadow:0 24px 48px #0002,inset 0 1px 0 #fff;isolation:isolate;padding-bottom:48px}
+.showcase-card summary{padding-bottom:0}
+.showcase-portrait{box-shadow:0 12px 18px #0003}
+.showcase-toggle{position:absolute;bottom:0;left:10px;right:10px;height:48px;display:flex;justify-content:center;align-items:center;gap:8px;padding:0;color:#222}
+.showcase-chevron{width:20px;height:20px;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.showcase-card.is-expanded .showcase-chevron{transform:rotate(180deg)}
+.showcase-card.is-expanded .when-closed{display:none}.showcase-card.is-expanded .when-open{display:inline}
+.showcase-card:not(.is-expanded) .when-open{display:none}.showcase-card:not(.is-expanded) .when-closed{display:inline}
+.showcase-body{animation:none;background:#f1f1f1;margin-top:16px}
+.showcase-glass-link{position:absolute;right:20px;bottom:18px;padding:15px 20px;border-radius:15px;background:rgba(255,255,255,.18);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 #ffffff20,0 8px 24px #0001;color:white;text-decoration:none;font-size:12px;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .5s cubic-bezier(.22,1,.36,1),background .2s;pointer-events:none}
+.showcase-card.is-expanded .showcase-glass-link{opacity:1;transform:none;pointer-events:auto}
+.showcase-glass-link:hover{background:rgba(255,255,255,.3)}
+.showcase-card.is-expanded .portrait-caption{right:145px}.showcase-card.is-expanded .portrait-caption h2{font-size:14px}
+@media(max-width:580px){.showcase-glass-link{right:14px;padding:13px 15px}.showcase-card.is-expanded .portrait-caption{right:120px;left:17px}.showcase-card.is-expanded .portrait-caption h2{font-size:13px}.showcase-card.is-expanded .portrait-caption p{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.showcase-chevron,.showcase-glass-link{transition:none}}
