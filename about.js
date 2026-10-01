@@ -10,6 +10,7 @@
     });
     if (active !== next) {
       active = next;
+      document.querySelector('.dial').classList.toggle('on-dark', active % 2 === 1);
       links.forEach((link, index) => {
         if (index === active) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
