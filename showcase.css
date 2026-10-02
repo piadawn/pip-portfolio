@@ -53,3 +53,11 @@
 .showcase-glass-link:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .showcase-card summary:focus-visible{outline-color:#ffffff80}
 @media(prefers-reduced-transparency:reduce){.showcase-card{background:#333}.showcase-body{background:#404040}.showcase-glass-link{background:#444}.showcase-glass-link::before{backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* Button effect supplied by Dawn: RGB-channel refraction with pill geometry. */
+.showcase-glass-link{border-radius:9999px;background:hsl(0 0% 0% / .1);border:0;box-shadow:inset 0 0 2px 1px #ffffff59,inset 0 0 10px 4px #ffffff26,inset 0 4px 16px #11111a0d,inset 0 8px 24px #11111a0d,inset 0 6px 56px #11111a0d;text-shadow:0 1px 3px #000b}
+.showcase-glass-link::before{backdrop-filter:blur(3px) saturate(1.2);-webkit-backdrop-filter:blur(3px) saturate(1.2)}
+@supports (backdrop-filter:url("#dawn-button-glass")){.showcase-glass-link::before{backdrop-filter:url("#dawn-button-glass") saturate(1.2)}}
+.showcase-glass-link::after{background:none;box-shadow:none}
+.showcase-glass-link:hover{background:hsl(0 0% 0% / .04);box-shadow:inset 0 0 2px 1px #ffffff80,inset 0 0 10px 4px #ffffff33,inset 0 4px 16px #11111a0d,inset 0 8px 24px #11111a0d,inset 0 6px 56px #11111a0d}
+@media(prefers-reduced-transparency:reduce){.showcase-glass-link{background:#444}.showcase-glass-link::before{backdrop-filter:none;-webkit-backdrop-filter:none}}
