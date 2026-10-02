@@ -36,3 +36,20 @@
 .showcase-card.is-expanded .portrait-caption{right:145px}.showcase-card.is-expanded .portrait-caption h2{font-size:14px}
 @media(max-width:580px){.showcase-glass-link{right:14px;padding:13px 15px}.showcase-card.is-expanded .portrait-caption{right:120px;left:17px}.showcase-card.is-expanded .portrait-caption h2{font-size:13px}.showcase-card.is-expanded .portrait-caption p{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.showcase-chevron,.showcase-glass-link{transition:none}}
+
+/* Clear liquid glass; text stays outside the refracted backdrop layer. */
+.liquid-glass-defs{position:absolute;pointer-events:none;overflow:hidden}
+.showcase-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.3);color:#fff;backdrop-filter:blur(20px) saturate(135%);-webkit-backdrop-filter:blur(20px) saturate(135%);box-shadow:inset 0 1px 1px #ffffff70,inset 1px 0 1px #ffffff20,inset 0 -1px 1px #0006,0 24px 48px #0004}
+.showcase-body{background:rgba(255,255,255,.065);border:1px solid #ffffff18;box-shadow:inset 0 1px 0 #ffffff15;color:#fff}
+.showcase-body h3,.showcase-body>a{color:#fff}.showcase-body>a{border-color:#ffffff80}
+.showcase-body p{color:#dededc}.showcase-tags{border-color:#ffffff20}.showcase-tags span{background:#ffffff12;color:#dededc}
+.showcase-toggle{color:#f7f7f5}.showcase-chevron{filter:invert(1)}
+.showcase-glass-link{isolation:isolate;overflow:hidden;border-radius:17px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.55);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:inset 1px 1px 1px #ffffffb3,inset -1px -1px 1px #ffffff4d,inset 0 0 6px #ffffff26,0 5px 16px #0004;text-shadow:0 1px 3px #000b}
+.showcase-glass-link::before{content:"";position:absolute;inset:0;z-index:-2;border-radius:inherit;backdrop-filter:blur(3px) saturate(150%);-webkit-backdrop-filter:blur(3px) saturate(150%)}
+@supports (backdrop-filter:url("#dawn-liquid-refraction")){.showcase-glass-link::before{backdrop-filter:url("#dawn-liquid-refraction") blur(1px) saturate(150%)}}
+.showcase-glass-link::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(135deg,#ffffff38 0%,#ffffff05 35%,#ffffff00 55%,#ffffff20 100%);box-shadow:inset 0 1px 0 #ffffffa6,inset 0 -1px 0 #ffffff40;pointer-events:none}
+.showcase-glass-link span{position:relative;z-index:1}
+.showcase-glass-link:hover{background:#ffffff14;box-shadow:inset 1px 1px 1px #ffffffd9,inset -1px -1px 1px #ffffff73,0 7px 20px #0005}
+.showcase-glass-link:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.showcase-card summary:focus-visible{outline-color:#ffffff80}
+@media(prefers-reduced-transparency:reduce){.showcase-card{background:#333}.showcase-body{background:#404040}.showcase-glass-link{background:#444}.showcase-glass-link::before{backdrop-filter:none;-webkit-backdrop-filter:none}}
