@@ -61,3 +61,14 @@
 .showcase-glass-link::after{background:none;box-shadow:none}
 .showcase-glass-link:hover{background:hsl(0 0% 0% / .04);box-shadow:inset 0 0 2px 1px #ffffff80,inset 0 0 10px 4px #ffffff33,inset 0 4px 16px #11111a0d,inset 0 8px 24px #11111a0d,inset 0 6px 56px #11111a0d}
 @media(prefers-reduced-transparency:reduce){.showcase-glass-link{background:#444}.showcase-glass-link::before{backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* Framer reference: two labels slide through a 17px viewport, 10px apart. */
+.showcase-glass-link .showcase-label-window{display:block;position:relative;height:17px;min-width:53px;overflow:hidden;line-height:17px}
+.showcase-glass-link .showcase-label-line{display:block;position:absolute;top:0;left:0;right:0;white-space:nowrap;text-align:center;line-height:17px;transition:transform .4s cubic-bezier(.22,1.25,.36,1)}
+.showcase-glass-link .showcase-label-line+ .showcase-label-line{top:27px}
+.showcase-glass-link::after{box-sizing:border-box;border:0 solid rgba(255,255,255,.2);transition:border-width .4s cubic-bezier(.22,1.25,.36,1),border-color .2s,box-shadow .2s}
+@media(hover:hover) and (pointer:fine){.showcase-glass-link:hover .showcase-label-line{transform:translateY(-27px)}.showcase-glass-link:hover::after{border-width:2px}}
+.showcase-glass-link:focus-visible .showcase-label-line{transform:translateY(-27px)}
+.showcase-glass-link:focus-visible::after{border-width:2px}
+.showcase-glass-link:active::after{border-width:3px;border-color:rgba(255,255,255,.5);box-shadow:0 0 10px rgba(255,255,255,.25),inset 0 0 10px rgba(255,255,255,.15)}
+@media(prefers-reduced-motion:reduce){.showcase-glass-link .showcase-label-line,.showcase-glass-link::after{transition:none}}
